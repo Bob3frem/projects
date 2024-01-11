@@ -1,4 +1,4 @@
-const slider = new Swiper('.nav', {
+const slider = new Swiper('.swiper', {
   slidesPerView: 'auto',
   spaceBetween: 0,
   breakpoints: {
