@@ -1,13 +1,20 @@
 const slider = new Swiper('.nav', {
+  slidesPerView: 'auto',
+  spaceBetween: 0,
   breakpoints: {
     0: {
-      slidesPerView: 3,
+      slidesPerView: 'auto',
       spaceBetween: 20
     },
 
     560: {
-      slidesPerView: 5,
-      spaceBetween: 20
+      slidesPerView: 'auto',
+      spaceBetween: 0,
+    },
+
+    1250: {
+      slidesPerView: 'auto',
+      spaceBetween: 57,
     }
   }
 });

@@ -107,7 +107,16 @@
 }
 
 .swiper {
-  width: 60%;
+  max-width: 750px;
+  width: 100%;
+}
+
+.swiper-wrapper {
+  justify-content: space-between;
+}
+
+.swiper-slide {
+  width: auto;
 }
 
 .nav__link {
@@ -1085,7 +1094,7 @@
   left: 30px;
 }
 
-.form__input.just-validate-error-field{
+.form__input.just-validate-error-field {
   border-color: #D52B1E;
 }
 
@@ -1123,6 +1132,11 @@
 .form__textarea:focus {
   background-color: #292E39;
   border-color: #AA9DFA;
+}
+
+.form__input.just-validate-error-field:hover,
+.form__input.just-validate-error-field:focus {
+  border-color: #D52B1E;
 }
 
 .form__input:focus::-webkit-input-placeholder, .form__textarea:focus::-webkit-input-placeholder {
@@ -1168,7 +1182,6 @@
 }
 
 .checkbox {
-  align-items: center;
   padding-left: 22px;
   font-size: 12px;
   line-height: 12px;
@@ -1208,6 +1221,13 @@
           transform: rotate(-45deg);
 }
 
+
+.checkbox__error .just-validate-error-label {
+  position: absolute;
+  top: -15px;
+  left: 0;
+}
+
 .checkbox__input:checked + .checkbox__span::before {
   visibility: visible;
 }
@@ -1220,6 +1240,10 @@
 .checkbox__input:checked:focus + .checkbox__span {
   -webkit-box-shadow: 0 0 0 0px #AA9DFA;
           box-shadow: 0 0 0 0px #AA9DFA;
+}
+
+.checkbox__input:checked ~ .checkbox__error {
+  display: none;
 }
 
 .footer__container {
@@ -1442,20 +1466,13 @@
   .swiper {
     position: absolute;
     max-width: none;
+    width: unset;
     left: 0;
     right: 0;
     bottom: -53%;
-    padding: 21px 55px 21px 90px;
+    padding: 21px 90px 21px 90px;
     border-top: 1px solid #E6E8EC;
     border-bottom: 1px solid #E6E8EC;
-  }
-
-  .nav__list {
-    justify-content: space-between;
-  }
-
-  .swiper-slide {
-    max-width: 75px;
   }
 
   .hero__container {
@@ -1620,12 +1637,7 @@
   }
 
   .swiper {
-    width: unset;
-    padding: 21px 80px 21px 110px;
-  }
-
-  .swiper-wrapper {
-    text-align: center;
+    padding: 21px 110px 21px 110px;
   }
 
   .nav__link {
@@ -1966,13 +1978,9 @@
     padding: 16px 32px 16px 32px;
   }
 
-  .nav {
+  .swiper {
     bottom: -90%;
     padding: 16px 32px 16px 30px;
-  }
-
-  .swiper-slide {
-    width: 90px;
   }
 
   .logo__img {
@@ -2378,6 +2386,13 @@
   .form__textarea::-ms-input-placeholder, .form__input::-ms-input-placeholder {
     font-size: 16px;
     line-height: 16px;
+  }
+
+  .just-validate-error-label {
+    position: absolute;
+    top: 2px;
+    left: 27px;
+    font-size: 12px;
   }
 
   .form__textarea::placeholder,
