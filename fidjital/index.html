@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20240321213912">
+  <link rel="stylesheet" href="css/normolize.css?_v=20240321213912">
+  <link rel="stylesheet" href="css/style.min.css?_v=20240321213912">
+  <title>Главная</title>
+</head>
+<body class="body">
+   <header class="header">
+  <div class="container header__container">
+    <a href="#" class="logo header__logo">
+      <picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="логотип Фиджитал-футбол" class="logo__img"></picture>
+    </a>
+    <nav class="nav header__nav">
+      <ul class="nav__list list-reset">
+        <li class="nav__item">
+          <a href="#about" class="nav__link">
+            О мероприятии
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="#programm" class="nav__link">
+            Программа
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="#teams" class="nav__link">
+            Команды
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="#rules" class="nav__link">
+            Регламент
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="#moments" class="nav__link">
+            Яркие моменты
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="#stream" class="nav__link">
+            Трансляция
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="#sponsors" class="nav__link">
+            Спонсоры
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="#contacts" class="nav__link">
+            Контакты
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <button class="btn header__btn burger">
+      <span class="burger__span"></span>
+    </button>
+  </div>
+ </header>
+  
+  <main class="main">
+    <section class="hero">
+      <div class="container hero__container">
+        <div class="hero__content">
+          <h1 class="title hero__title m-reset">
+            Фиджитал-футбол
+          </h1>
+          <p class="hero__subtitle m-reset">
+            Загляни в мир любимой спортивной дисциплины: здесь ты найдешь всю необходимую информацию об игроках, командах и правилах.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container about__container">
+        <h2 class="title about__title m-reset">
+          О мероприятии
+        </h2>
+        <ul class="about__list list-reset">
+          <li class="about__item">
+            <a href="" class="about__link"></a>
+            <div class="about__icon">
+              <svg class="about__icon--svg about__icon--svg-list" width="124" height="125" viewBox="0 0 124 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M108.5 52.1668H15.5M108.5 59.9168V45.9668C108.5 37.286 108.5 32.9456 106.811 29.63C105.325 26.7135 102.953 24.3423 100.037 22.8562C96.7212 21.1668 92.3808 21.1668 83.7 21.1668H40.3C31.6192 21.1668 27.2788 21.1668 23.9631 22.8562C21.0466 24.3423 18.6754 26.7135 17.1894 29.63C15.5 32.9456 15.5 37.286 15.5 45.9668V89.3668C15.5 98.0476 15.5 102.388 17.1894 105.704C18.6754 108.62 21.0466 110.991 23.9631 112.477C27.2788 114.167 31.6192 114.167 40.3 114.167H64.5833M82.6667 10.8335V31.5002M41.3333 10.8335V31.5002" stroke="#5240C0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M92.9997 114.167C92.9997 102.759 102.258 93.5002 113.666 93.5002C102.258 93.5002 92.9997 84.2415 92.9997 72.8335C92.9997 84.2415 83.741 93.5002 72.333 93.5002C83.741 93.5002 92.9997 102.759 92.9997 114.167Z" stroke="#5240C0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>                
+            </div>
+            <p class="about__descr m-reset">
+              25 апреля 2024
+            </p>
+        </li>
+        <li class="about__item">
+          <a href="https://yandex.ru/maps/?pt=35.914349, 56.845529&z=12&l=map" class="about__link"></a>
+            <div class="about__icon">
+              <svg class="about__icon--svg about__icon--svg-loco" width="124" height="125" viewBox="0 0 124 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M28.4471 74.774C18.9126 78.9801 12.9971 84.8413 12.9971 91.3243C12.9971 104.123 36.0544 114.499 64.4971 114.499C92.9397 114.499 115.997 104.123 115.997 91.3243C115.997 84.8413 110.082 78.9801 100.547 74.774M95.3971 42.3993C95.3971 63.3274 72.2221 73.2993 64.4971 88.7493C56.7721 73.2993 33.5971 63.3274 33.5971 42.3993C33.5971 25.3337 47.4315 11.4993 64.4971 11.4993C81.5627 11.4993 95.3971 25.3337 95.3971 42.3993ZM69.6471 42.3993C69.6471 45.2435 67.3413 47.5493 64.4971 47.5493C61.6528 47.5493 59.3471 45.2435 59.3471 42.3993C59.3471 39.555 61.6528 37.2493 64.4971 37.2493C67.3413 37.2493 69.6471 39.555 69.6471 42.3993Z" stroke="#5240C0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>               
+            </div>
+            <p class="about__descr m-reset">
+              Мероприятия пройдет очно на пр. Мира 24
+            </p>
+        </li>
+        <li class="about__item">
+          <a href="" class="about__link"></a>
+            <div class="about__icon">
+              <svg class="about__icon--svg about__icon--svg-men" width="124" height="125" viewBox="0 0 124 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M82.6673 18.4168C90.3229 22.2212 95.584 30.1212 95.584 39.25C95.584 48.3788 90.3229 56.2788 82.6673 60.0832M93.0006 87.1263C100.81 90.6601 107.842 96.4191 113.667 103.833M10.334 103.833C20.3909 91.0333 34.0447 83.1667 49.084 83.1667C64.1232 83.1667 77.7771 91.0333 87.834 103.833M72.334 39.25C72.334 52.0906 61.9246 62.5 49.084 62.5C36.2434 62.5 25.834 52.0906 25.834 39.25C25.834 26.4094 36.2434 16 49.084 16C61.9246 16 72.334 26.4094 72.334 39.25Z" stroke="#5240C0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>              
+            </div>
+            <p class="about__descr m-reset">
+              Участие бесплатное для всех 
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="programm" class="programm">
+      <div class="container programm__container">
+        <h2 class="title programm__title m-reset">
+          Программа
+        </h2>
+        <ol class="programm__list list-reset">
+          <li class="programm__item">
+            <div class="programm__count">
+              01
+            </div>
+            <div class="programm__info">
+              <div class="programm__time">
+                10:00-11:00
+              </div>
+              <p class="programm__descr m-reset">
+                <span class="programm__text">Подготовительный тур.</span> Участники готовятся к соревновваниям
+              </p>
+            </div>
+          </li>
+          <li class="programm__item">
+            <div class="programm__count">
+              02
+            </div>
+            <div class="programm__info">
+              <div class="programm__time">
+                11:00-12:00
+              </div>
+              <p class="programm__descr m-reset">
+                <span class="programm__text">Разминочный тур.</span> Участники готовятся к соревновваниям
+              </p>
+            </div>
+          </li>
+          <li class="programm__item">
+            <div class="programm__count">
+              03
+            </div>
+            <div class="programm__info">
+              <div class="programm__time">
+                12:10-13:30
+              </div>
+              <p class="programm__descr m-reset">
+                <span class="programm__text">1 тур.</span> Участники готовятся к соревновваниям
+              </p>
+            </div>
+          </li>
+          <li class="programm__item">
+            <div class="programm__count">
+              04
+            </div>
+            <div class="programm__info">
+              <div class="programm__time">
+                14:00-15:30
+              </div>
+              <p class="programm__descr m-reset">
+                <span class="programm__text">2 тур.</span> Участники готовятся к соревновваниям
+              </p>
+            </div>
+          </li>
+          <li class="programm__item">
+            <div class="programm__count">
+              05
+            </div>
+            <div class="programm__info">
+              <div class="programm__time">
+                16:30
+              </div>
+              <p class="programm__descr m-reset">
+                <span class="programm__text">Подведение итогов.</span> Участники готовятся к соревновваниям
+              </p>
+            </div>
+          </li>
+          <span class="programm__list--decor"></span>
+        </ol>
+      </div>
+    </section>
+
+    <section id="teams" class="teams">
+      <div class="container teams__container">
+        <h2 class="title teams__title m-reset">
+          Команды
+        </h2>
+        <ul class="teams__list list-reset">
+          <li class="teams__item">
+            <div class="teams__image">
+              <svg class="teams__image--svg" width="202" height="240" viewBox="0 0 202 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 12.9585C65.124 -4.3195 136.876 -4.3195 201.5 12.9585C201.5 51.0564 201.5 89.154 201.5 127.252C201.5 184.396 100.998 240 100.998 240C100.998 240 0.5 184.406 0.5 127.252C0.5 89.154 0.5 51.0564 0.5 12.9585Z" fill="#959595"/>
+              </svg>
+            </div>
+            <div class="teams__info">
+              <h3 class="teams__heading m-reset">
+                Команда 1
+              </h3>
+              <p class="teams__descr m-reset">
+                Компания «Сбербанк» 
+              </p>
+            </div>
+          </li>
+          <li class="teams__item">
+            <div class="teams__image">
+              <svg class="teams__image--svg" width="202" height="240" viewBox="0 0 202 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 12.9585C65.124 -4.3195 136.876 -4.3195 201.5 12.9585C201.5 51.0564 201.5 89.154 201.5 127.252C201.5 184.396 100.998 240 100.998 240C100.998 240 0.5 184.406 0.5 127.252C0.5 89.154 0.5 51.0564 0.5 12.9585Z" fill="#959595"/>
+              </svg>
+            </div>
+            <div class="teams__info">
+              <h3 class="teams__heading m-reset">
+                Команда 2
+              </h3>
+              <p class="teams__descr m-reset">
+                Компания «Сбербанк» 
+              </p>
+            </div>
+          </li>
+          <li class="teams__item">
+            <div class="teams__image">
+              <svg class="teams__image--svg" width="202" height="240" viewBox="0 0 202 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 12.9585C65.124 -4.3195 136.876 -4.3195 201.5 12.9585C201.5 51.0564 201.5 89.154 201.5 127.252C201.5 184.396 100.998 240 100.998 240C100.998 240 0.5 184.406 0.5 127.252C0.5 89.154 0.5 51.0564 0.5 12.9585Z" fill="#959595"/>
+              </svg>
+            </div>
+            <div class="teams__info">
+              <h3 class="teams__heading m-reset">
+                Команда 3
+              </h3>
+              <p class="teams__descr m-reset">
+                Компания «Сбербанк» 
+              </p>
+            </div>
+          </li>
+          <li class="teams__item">
+            <div class="teams__image">
+              <svg class="teams__image--svg" width="202" height="240" viewBox="0 0 202 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 12.9585C65.124 -4.3195 136.876 -4.3195 201.5 12.9585C201.5 51.0564 201.5 89.154 201.5 127.252C201.5 184.396 100.998 240 100.998 240C100.998 240 0.5 184.406 0.5 127.252C0.5 89.154 0.5 51.0564 0.5 12.9585Z" fill="#959595"/>
+              </svg>
+            </div>
+            <div class="teams__info">
+              <h3 class="teams__heading m-reset">
+                Команда 4
+              </h3>
+              <p class="teams__descr m-reset">
+                Компания «Сбербанк» 
+              </p>
+            </div>
+          </li>
+          <li class="teams__item">
+            <div class="teams__image">
+              <svg class="teams__image--svg" width="202" height="240" viewBox="0 0 202 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 12.9585C65.124 -4.3195 136.876 -4.3195 201.5 12.9585C201.5 51.0564 201.5 89.154 201.5 127.252C201.5 184.396 100.998 240 100.998 240C100.998 240 0.5 184.406 0.5 127.252C0.5 89.154 0.5 51.0564 0.5 12.9585Z" fill="#959595"/>
+              </svg>
+            </div>
+            <div class="teams__info">
+              <h3 class="teams__heading m-reset">
+                Команда 5
+              </h3>
+              <p class="teams__descr m-reset">
+                Компания «Сбербанк» 
+              </p>
+            </div>
+          </li>
+          <li class="teams__item">
+            <div class="teams__image">
+              <svg class="teams__image--svg" width="202" height="240" viewBox="0 0 202 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 12.9585C65.124 -4.3195 136.876 -4.3195 201.5 12.9585C201.5 51.0564 201.5 89.154 201.5 127.252C201.5 184.396 100.998 240 100.998 240C100.998 240 0.5 184.406 0.5 127.252C0.5 89.154 0.5 51.0564 0.5 12.9585Z" fill="#959595"/>
+              </svg>
+            </div>
+            <div class="teams__info">
+              <h3 class="teams__heading m-reset">
+                Команда 6
+              </h3>
+              <p class="teams__descr m-reset">
+                Компания «Сбербанк» 
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="rules" class="rules">
+      <div class="container rules__container">
+        <h2 class="title rules__title m-reset">
+          Регламент
+        </h2>
+        <p class="rules__subtitle m-reset">
+          На турнире участвует шестнадцать команд из восьми спортсменов. На групповом этапе матчи проходят в формате «GSL без решающего 5-го матча». В плей-офф выходят команды, которые заняли в своей группе с 1-го по 3-е места. Лидеры своей группы напрямую выходят в 1/4 финала. Каждый матч состоит из двух этапов.
+        </p>
+        <div class="rules__content">
+          <ul class="rules__list list-reset">
+            <li class="rules__item">
+              <div class="rules__icon rules__icon--1"></div>
+              <div class="rules__info">
+                <h3 class="rules__heading m-reset">
+                  Цифровой этап (футбольный симулятор)
+                </h3>
+                <p class="rules__descr m-reset">
+                  Матчи проводятся по правилам интерактивного футбола. В этапе участвуют четыре спортсмена от команды. В виртуальном матче играют 2 тайма по 3 минуты, в каждом из таймов участвуют по две пары атлетов от команды.
+                </p>
+              </div>
+            </li>
+            <li class="rules__item">
+              <div class="rules__icon rules__icon--2"></div>
+              <div class="rules__info">
+                <h3 class="rules__heading m-reset">
+                  Физический этап (футбол 5х5)
+                </h3>
+                <p class="rules__descr m-reset">
+                  На мини-футбольном поле команды играют матчи в формате 5х5. От каждой команды играет по пять игроков (четыре полевых и вратарь), три игрока на замене (два полевых и вратарь). Играют 2 тайма по 5 минут каждый, перерыв между которыми составляет 5 минут.
+                </p>
+              </div>
+            </li>
+            <li class="rules__item">
+              <div class="rules__icon rules__icon--3"></div>
+              <div class="rules__info">
+                <h3 class="rules__heading m-reset">
+                  Подсчет очков
+                </h3>
+                <p class="rules__descr m-reset">
+                  Победитель определяется по сумме забитых мячей в цифровом и физическом этапах. В случае ничьей победитель определяется в серии штрафных ударов (пенальти).
+                </p>
+              </div>
+            </li>
+            <li class="rules__item">
+              <div class="rules__icon rules__icon--4"></div>
+              <div class="rules__info">
+                <h3 class="rules__heading m-reset">
+                  Нарушения
+                </h3>
+                <p class="rules__descr m-reset">
+                  За недисциплинированное поведение или спортивное нарушение судья может показать спортсмену желтую (предупреждение) или красную (удаление) карточку. Карточки, показанные на цифровом и физическом этапе, суммируются.
+                </p>
+              </div>
+            </li>
+            <li class="rules__item">
+              <div class="rules__icon rules__icon--5"></div>
+              <div class="rules__info">
+                <h3 class="rules__heading m-reset">
+                  Протокол
+                </h3>
+                <p class="rules__descr m-reset">
+                  За недисциплинированное поведение или спортивное нарушение судья может показать спортсмену желтую (предупреждение) или красную (удаление) карточку. Карточки, показанные на цифровом и физическом этапе, суммируются.
+                </p>
+              </div>
+            </li>
+          </ul>
+          <div class="rules__btns">
+            <button class="btn rules__btn">
+              Положение о турнире
+            </button>
+            <button class="btn rules__btn">
+              Технические правила
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="moments" class="moments">
+      <div class="container moments__container">
+        <h2 class="title moments__title m-reset">
+          Яркие моменты
+        </h2>
+      </div>
+      <div class="moments__content">
+        <div class="slider swiper">
+          <ul class="slider__list list-reset swiper-wrapper">
+            <li class="slider__item swiper-slide">
+              <picture><source srcset="img/moment-1.webp" type="image/webp"><img src="img/moment-1.png" alt="" class="slider__img"></picture>
+            </li>
+            <li class="slider__item swiper-slide">
+              <picture><source srcset="img/moment-1.webp" type="image/webp"><img src="img/moment-1.png" alt="" class="slider__img"></picture>
+            </li>
+            <li class="slider__item swiper-slide">
+              <picture><source srcset="img/moment-1.webp" type="image/webp"><img src="img/moment-1.png" alt="" class="slider__img"></picture>
+            </li>
+            <li class="slider__item swiper-slide">
+              <picture><source srcset="img/moment-1.webp" type="image/webp"><img src="img/moment-1.png" alt="" class="slider__img"></picture>
+            </li>
+          </ul>
+          <div class=" slider__pagination swiper-pagination"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="slider__btns">
+          <div class="slider__btn slider__btn--prev"></div>
+          <div class="slider__btn slider__btn--next"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stream" class="stream">
+      <div class="container stream__container">
+        <h2 class="title stream__title m-reset">
+          Регламент
+        </h2>
+        <div class="stream__content">
+          <iframe id="stream-iframe" class="stream__box" src="https://www.youtube.com/embed/MBM99Jr7K_8?modestbranding=1&color=white" frameborder="0" allowfullscreen seamless></iframe>
+          <button id="play-button" class="stream__btn" onclick="playStream()">
+            <svg class="stream__btn--play" width="117" height="117" viewBox="0 0 117 117" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="58.5" cy="58.5" r="58.5" fill="#5240C0" />
+              <path d="M90 58.5L42.75 85.7798L42.75 31.2202L90 58.5Z" fill="white" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="sponsors" class="sponsors">
+      <div class="container sponsors__container">
+        <h2 class="title title__sponsors m-reset">
+          Спонсоры
+        </h2>
+        <div class="sponsors__content">
+          <ul class="sponsors__list list-reset">
+            <li class="sponsors__item">
+              <picture><source srcset="img/mts.webp" type="image/webp"><img src="img/mts.png" alt="" class="sponsors__img"></picture>
+            </li>
+            <li class="sponsors__item">
+              <picture><source srcset="img/rtrs.webp" type="image/webp"><img src="img/rtrs.png" alt="" class="sponsors__img"></picture>
+            </li>
+            <li class="sponsors__item">
+              <picture><source srcset="img/megafon.webp" type="image/webp"><img src="img/megafon.png" alt="" class="sponsors__img"></picture>
+            </li>
+            <li class="sponsors__item">
+              <picture><source srcset="img/axenix.webp" type="image/webp"><img src="img/axenix.png" alt="" class="sponsors__img"></picture>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacts" class="footer">
+  <div class="container footer__container">
+    <div class="footer__row footer__row--top">
+      <div class="footer__cols footer__cols--logo">
+        <a href="#" class="logo footer__logo">
+          <picture><source srcset="img/logo-2.webp" type="image/webp"><img src="img/logo-2.png" alt="logo" class="logo__img"></picture>
+        </a>
+      </div>
+      <div class="footer__cols--content">
+        <div class="footer__col footer__col--contacts">
+          <div class="footer__contacts contacts">
+            <span class="contacts__head">
+              Контакты:
+            </span>
+            <div class="contacts__info">
+              <a href="https://yandex.ru/maps/?pt=35.914349, 56.845529&z=12&l=map" class="contacts__link contacts__link--adress">
+                <span class="contacts__icon"></span>
+                <span class="contacts__text">
+                  г. Тверь, пр-т Победы, 14.
+                </span>
+              </a>
+              <a href="tel:88002000000" class="contacts__link contacts__link--phone">
+                <span class="contacts__icon"></span>
+                <span class="contacts__text">
+                  8-800-200-00-00
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__col footer__col--socials">
+          <div class="footer__socials socials">
+            <span class="socials__head">
+              Наши соцсети:
+            </span>
+            <div class="socials__info">
+              <a href="https://vk.com" class="socials__link socials__link--vk">
+                <span class="socials__icon"></span>
+                <span class="socials__text">
+                  Вконтакте
+                </span>
+              </a>
+              <a href="https://t.me" class="socials__link socials__link--tg">
+                <span class="socials__icon"></span>
+                <span class="socials__text">
+                  Телеграмм
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__row footer__row--bottom">
+      <div class="footer__col footer__col--copyrights">
+        <div class="footer__copyrights copyrights">
+          <a href="#" class="copyrights__link">
+            Пользовательское соглашение
+          </a>
+          <a href="#" class="copyrights__link">
+            Политика конфиденциальности
+          </a>
+          <a href="#" class="copyrights__link">
+            Политика cookies
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20240321213912"></script>
+  <script src="js/app.min.js?_v=20240321213912"></script>
+</body>
+</html>
