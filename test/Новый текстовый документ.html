@@ -1,0 +1,51 @@
+<DOCTYPE html
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="konva.min.js" defer></script> -->
+    <script src="app.js" defer></script>
+    <title>Документы</title>
+  </head>
+
+  <body>
+
+    <header class="header">
+      <div class="container header__container">
+        <h1 class="header__title">
+          Текущее состояние
+        </h1>
+        <div class="select">
+          <select name="Документы" id="docsSelect" class="select__view">
+            <option value="1">Документ 1</option>
+            <option value="1">Документ 2</option>
+            <option value="1">Документ 3</option>
+            <option value="1">Документ 4</option>
+            <option value="1">Документ 5</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="docs">
+        <div class="container docs__container">
+          <div class="docs__col">
+            <div id="docs__content" class="docs__content">
+
+            </div>
+          </div>
+          <div class="docs__col">
+            <div class="btns">
+              <button class="btn btns__save">Сохранить</button>
+              <button class="btn btns__reset">Сбросить</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
