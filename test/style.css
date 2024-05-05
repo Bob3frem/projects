@@ -43,10 +43,14 @@ body {
   gap: 20px;
 }
 
+.docs__col:first-child {
+  border: 1px solid #1a1a1a;
+  padding: 5px;
+}
+
 .docs__content {
   width: 360px;
   height: 512px;
-  border: 1px solid #1a1a1a;
 }
 
 .docs__img {
@@ -65,15 +69,34 @@ body {
 }
 
 .btns__reset {
+  background-color: #ffbb00;
+  color: #fff;
+}
+
+.btns__add {
   background-color: #0081b4;
   color: #fff;
+}
+
+.btns__delete {
+  background-color: #b41e00;
+  color: #fff;
+}
+
+.rects-table {
+  width: 100%;
+}
+
+.rects-table,
+.rects-table th, 
+.rects-table td {
+  border: 1px solid #1a1a1a;
 }
 
 @media (min-width: 768px) {
   .docs__content {
     width: 720px;
     height: 1024px;
-    border: 1px solid #1a1a1a;
   }
 }
 
