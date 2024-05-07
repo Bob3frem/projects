@@ -53,10 +53,10 @@ body {
   height: 512px;
 }
 
-.docs__img {
+.canvas {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 .btns {

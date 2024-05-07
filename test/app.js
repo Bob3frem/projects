@@ -212,161 +212,332 @@
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
+// document.addEventListener('DOMContentLoaded', function() {
+//   const container = document.querySelector('.docs__content');
+//   const canvas = document.querySelector('.canvas');
+//   const ctx = canvas.getContext('2d');
+
+//   const rects = [
+//     { id: 1, x: 100, y: 130, width: 150, height: 30, stroke: '#1A1A1A', isDragging: false, isResizing: false },
+//     { id: 2, x: 200, y: 50, width: 150, height: 30, stroke: '1A1A1A', isDragging: false, isResizing: false }
+//   ];
+
+//   const imageObj = new Image();
+//   imageObj.onload = function() {
+//     draw();
+//   };
+//   imageObj.src = 'Письмо1.jpg';
+
+//   const setCanvasSize = () => {
+//     canvas.width = container.offsetWidth;
+//     canvas.height = container.offsetHeight;
+//     draw();
+//   };
+//   setCanvasSize();
+
+//   function draw() {
+//     ctx.clearRect(0, 0, canvas.width, canvas.height);
+//     drawImageScaled(imageObj, ctx);
+//     rects.forEach(rect => {
+//       ctx.strokeStyle = rect.selectedForDeletion ? '#FF0000' : rect.stroke;
+//       ctx.lineWidth = 3;
+//       ctx.strokeRect(rect.x, rect.y, rect.width, rect.height);
+//       // Добавление маркера для изменения размера
+//       if (rect) {
+//         ctx.strokeStyle = '#000';
+//         ctx.strokeRect(rect.x + rect.width - 5, rect.y + rect.height - 5, 10, 10);
+//         ctx.fillStyle = '#FFF';
+//         ctx.fillRect(rect.x + rect.width - 5, rect.y + rect.height - 5, 10, 10);
+//       }
+//     });
+//     updateTable();
+//   }
+
+//   function updateTable() {
+//     const tableBody = document.getElementById('rectsTable').getElementsByTagName('tbody')[0];
+//     tableBody.innerHTML = ""; // Очистка текущего содержимого таблицы
+
+//     rects.forEach(rect => {
+//         const row = tableBody.insertRow();
+//         const idCell = row.insertCell();
+//         idCell.textContent = rect.id;
+
+//         const xCell = row.insertCell();
+//         xCell.textContent = `${Math.round(rect.x)}px`; // Форматирование для читабельности
+
+//         const yCell = row.insertCell();
+//         yCell.textContent = `${Math.round(rect.y)}px`;
+
+//         const widthCell = row.insertCell();
+//         widthCell.textContent = `${Math.round(rect.width)}px`;
+
+//         const heightCell = row.insertCell();
+//         heightCell.textContent = `${Math.round(rect.height)}px`;
+//     });
+//   }
+
+//   function drawImageScaled(img, ctx) {
+//     const canvasRatio = canvas.width / canvas.height;
+//     const imageRatio = img.width / img.height;
+//     let newWidth, newHeight, newX, newY;
+//     if (imageRatio < canvasRatio) {
+//       newHeight = canvas.height;
+//       newWidth = img.width * (newHeight / img.height);
+//       newX = (canvas.width - newWidth) / 2;
+//       newY = 0;
+//     } else {
+//       newWidth = canvas.width;
+//       newHeight = img.height * (newWidth / img.width);
+//       newX = 0;
+//       newY = (canvas.height - newHeight) / 2;
+//     }
+//     ctx.drawImage(img, newX, newY, newWidth, newHeight);
+//   }
+
+//   canvas.addEventListener('mousedown', function(e) {
+//     const mouseX = e.clientX - canvas.getBoundingClientRect().left;
+//     const mouseY = e.clientY - canvas.getBoundingClientRect().top;
+//     rects.forEach(rect => {
+//       if (mouseX > rect.x + rect.width - 10 && mouseX < rect.x + rect.width &&
+//           mouseY > rect.y + rect.height - 10 && mouseY < rect.y + rect.height) {
+//         rect.isResizing = true;
+//       } else if (mouseX >= rect.x && mouseX <= rect.x + rect.width &&
+//                 mouseY >= rect.y && mouseY <= rect.y + rect.height) {
+//         rect.isDragging = true;
+//         rect.dragOffsetX = mouseX - rect.x;
+//         rect.dragOffsetY = mouseY - rect.y;
+//       }
+//     });
+//   });
+
+//   canvas.addEventListener('mousemove', function(e) {
+//     const mouseX = e.clientX - canvas.getBoundingClientRect().left;
+//     const mouseY = e.clientY - canvas.getBoundingClientRect().top;
+//     rects.forEach(rect => {
+//       if (rect.isResizing) {
+//         const newWidth = mouseX - rect.x;
+//         const newHeight = mouseY - rect.y;
+//         if (newWidth > 0 && newHeight > 0) {
+//           rect.width = newWidth;
+//           rect.height = newHeight;
+//         }
+//       } else if (rect.isDragging) {
+//         const newX = mouseX - rect.dragOffsetX;
+//         const newY = mouseY - rect.dragOffsetY;
+//         if (newX >= 0 && newY >= 0 && newX + rect.width <= canvas.width && newY + rect.height <= canvas.height) {
+//           rect.x = newX;
+//           rect.y = newY;
+//         }
+//       }
+//     });
+//     draw();
+//   });
+
+//   canvas.addEventListener('mouseup', function() {
+//     rects.forEach(rect => {
+//       rect.isDragging = false;
+//       rect.isResizing = false;
+//       draw();
+//     });
+//   });
+
+//   window.addEventListener('resize', setCanvasSize);
+
+//   const saveBtn = document.querySelector('.btns__save');
+
+//   saveBtn.addEventListener('click', function() {
+//     saveRectCoords();
+//   });
+
+//   function saveRectCoords() {
+//     const saveRects = rects.map((rect, index) => ({
+//       id: index + 1,
+//       x: rect.x,
+//       y: rect.y,
+//       width: rect.width,
+//       height: rect.height
+//     }));
+
+//     const saveRectsJSON = JSON.stringify(saveRects);
+//     console.log(saveRectsJSON)
+//   }
+
+//   const addBtn = document.querySelector('.btns__add');
+//   addBtn.addEventListener('click', addRect);
+
+//   function addRect() {
+//     const newRect = {
+//       id: rects.length + 1, // Присваивание уникального ID
+//       x: Math.floor(Math.random() * canvas.width / 3), // Примерные начальные координаты
+//       y: Math.floor(Math.random() * canvas.height / 3),
+//       width: 100,
+//       height: 30,
+//       stroke: '#1A1A1A',
+//       isDragging: false,
+//       isResizing: false
+//     };
+  
+//     rects.push(newRect);
+//     draw(); // Перерисовка канваса
+//   }
+  
+//   const deleteBtn = document.querySelector('.btns__delete');
+//   deleteBtn.addEventListener('click', function() {
+//     const indexToRemove = rects.findIndex(rect => rect.selectedForDeletion);
+//     if (indexToRemove !== -1) {
+//       rects.splice(indexToRemove, 1);
+//       draw();
+//     }
+//   });
+
+//   canvas.addEventListener('dblclick', function(e) {
+//     const mouseX = e.clientX - canvas.getBoundingClientRect().left;
+//     const mouseY = e.clientY - canvas.getBoundingClientRect().top;
+    
+//     rects.forEach(rect => {
+//       if (
+//         mouseX >= rect.x && mouseX <= rect.x + rect.width &&
+//         mouseY >= rect.y && mouseY <= rect.y + rect.height
+//       ) {
+//         rect.selectedForDeletion = !rect.selectedForDeletion;
+//       } else {
+//         rect.selectedForDeletion = false;
+//       }
+//     });
+//     draw();
+//   });
+// });
+
+document.addEventListener('DOMContentLoaded', async function() {
   const container = document.querySelector('.docs__content');
-  const canvas = document.createElement('canvas');
-  container.appendChild(canvas);
+  const canvas = document.querySelector('.canvas');
   const ctx = canvas.getContext('2d');
-
-  let originalWidth = container.offsetWidth;
-  let originalHeight = container.offsetHeight;
-
-  const coordsDisplay = document.querySelector('.coords');
+  const select = document.getElementById('imageSelect');
+  const url = 'https://bob3frem.github.io/projects/radio-wave/img';
+  let imageObj = new Image(); // Общий объект изображения
 
   const rects = [
-    { id: 1, x: 0.345, y: 0.36, width: 0.16, height: 0.03, stroke: '#1A1A1A', isDragging: false, isResizing: false },
-    { id: 2, x: 0.5, y: 0.1, width: 0.1, height: 0.03, stroke: '1A1A1A', isDragging: false, isResizing: false }
+      { id: 1, x: 100, y: 130, width: 150, height: 30, stroke: '#1A1A1A', isDragging: false, isResizing: false },
+      { id: 2, x: 200, y: 50, width: 150, height: 30, stroke: '1A1A1A', isDragging: false, isResizing: false }
   ];
 
-  const imageObj = new Image();
-  imageObj.onload = function() {
-    draw();
-  };
-  imageObj.src = 'Письмо1.jpg';
+  try {
+      const response = await fetch(url);
+      const images = await response.json();
 
-  const setCanvasSize = () => {
-    canvas.width = container.offsetWidth;
-    canvas.height = container.offsetHeight;
-    updateRects();
-    draw();
-  };
+      // Заполнение селекта опциями
+      images.forEach(img => {
+          const option = new Option(img.name, img.url);
+          select.add(option);
+      });
+
+      // Изменение изображения при выборе из селекта
+      select.addEventListener('change', function() {
+          updateImage(this.value);
+      });
+      
+      // Начальная загрузка первого изображения, если массив не пуст
+      if (images.length > 0) {
+          updateImage(images[0].url);
+      }
+  } catch (error) {
+      console.error('Ошибка загрузки изображений:', error);
+  }
+
+  function updateImage(src) {
+      imageObj.onload = function() {
+          draw();
+      };
+      imageObj.src = src;
+  }
+
+  function setCanvasSize() {
+      canvas.width = container.offsetWidth;
+      canvas.height = container.offsetHeight;
+      draw();
+  }
+  window.addEventListener('resize', setCanvasSize);
   setCanvasSize();
 
-  function updateRects() {
-    const scaleWidth = canvas.width / originalWidth;
-    const scaleHeight = canvas.height / originalHeight;
-    rects.forEach(rect => {
-      rect.scaledX = rect.x * canvas.width;
-      rect.scaledY = rect.y * canvas.height;
-      rect.scaledWidth = rect.width * canvas.width;
-      rect.scaledHeight = rect.height * canvas.height;
-    });
-  }
-
-  function updateTable() {
-    const tableBody = document.getElementById('rectsTable').getElementsByTagName('tbody')[0];
-    tableBody.innerHTML = ""; // Очистка текущего содержимого таблицы
-
-    rects.forEach(rect => {
-        const row = tableBody.insertRow();
-        const idCell = row.insertCell();
-        idCell.textContent = rect.id;
-
-        const xCell = row.insertCell();
-        xCell.textContent = `${Math.round(rect.scaledX)}px`; // Форматирование для читабельности
-
-        const yCell = row.insertCell();
-        yCell.textContent = `${Math.round(rect.scaledY)}px`;
-
-        const widthCell = row.insertCell();
-        widthCell.textContent = `${Math.round(rect.scaledWidth)}px`;
-
-        const heightCell = row.insertCell();
-        heightCell.textContent = `${Math.round(rect.scaledHeight)}px`;
-    });
-  }
-
   function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawImageScaled(imageObj, ctx);
-    rects.forEach(rect => {
-      ctx.strokeStyle = rect.selectedForDeletion ? '#FF0000' : rect.stroke;
-      ctx.lineWidth = 3;
-      ctx.strokeRect(rect.scaledX, rect.scaledY, rect.scaledWidth, rect.scaledHeight);
-      // Добавление маркера для изменения размера
-      if (rect) {
-        ctx.strokeStyle = '#000';
-        ctx.strokeRect(rect.scaledX + rect.scaledWidth - 5, rect.scaledY + rect.scaledHeight - 5, 10, 10);
-        ctx.fillStyle = '#FFF';
-        ctx.fillRect(rect.scaledX + rect.scaledWidth - 5, rect.scaledY + rect.scaledHeight - 5, 10, 10);
-      }
-    });
-    updateCoordsDisplay();
-    updateTable();
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawImageScaled(imageObj, ctx);
+      rects.forEach(rect => {
+          ctx.strokeStyle = rect.selectedForDeletion ? '#FF0000' : rect.stroke;
+          ctx.lineWidth = 3;
+          ctx.strokeRect(rect.x, rect.y, rect.width, rect.height);
+          if (rect) {
+              ctx.strokeStyle = '#000';
+              ctx.strokeRect(rect.x + rect.width - 5, rect.y + rect.height - 5, 10, 10);
+              ctx.fillStyle = '#FFF';
+              ctx.fillRect(rect.x + rect.width - 5, rect.y + rect.height - 5, 10, 10);
+          }
+      });
   }
 
   function drawImageScaled(img, ctx) {
-    const canvasRatio = canvas.width / canvas.height;
-    const imageRatio = img.width / img.height;
-    let newWidth, newHeight, newX, newY;
-    if (imageRatio < canvasRatio) {
-      newHeight = canvas.height;
-      newWidth = img.width * (newHeight / img.height);
-      newX = (canvas.width - newWidth) / 2;
-      newY = 0;
-    } else {
-      newWidth = canvas.width;
-      newHeight = img.height * (newWidth / img.width);
-      newX = 0;
-      newY = (canvas.height - newHeight) / 2;
-    }
-    ctx.drawImage(img, newX, newY, newWidth, newHeight);
-  }
-  function updateCoordsDisplay() {
-    coordsDisplay.innerHTML = rects.map((rect, index) => `Rect ${index + 1}: X=${Math.round(rect.scaledX)}px, Y=${Math.round(rect.scaledY)}px, Width=${Math.round(rect.scaledWidth)}px, Height=${Math.round(rect.scaledHeight)}px`).join('<br>');
+      const canvasRatio = canvas.width / canvas.height;
+      const imageRatio = img.width / img.height;
+      let newWidth, newHeight, newX, newY;
+      if (imageRatio < canvasRatio) {
+          newHeight = canvas.height;
+          newWidth = img.width * (newHeight / img.height);
+          newX = (canvas.width - newWidth) / 2;
+          newY = 0;
+      } else {
+          newWidth = canvas.width;
+          newHeight = img.height * (newWidth / img.width);
+          newX = 0;
+          newY = (canvas.height - newHeight) / 2;
+      }
+      ctx.drawImage(img, newX, newY, newWidth, newHeight);
   }
 
   canvas.addEventListener('mousedown', function(e) {
-    const mouseX = e.clientX - canvas.getBoundingClientRect().left;
-    const mouseY = e.clientY - canvas.getBoundingClientRect().top;
-    rects.forEach(rect => {
-      if (mouseX > rect.scaledX + rect.scaledWidth - 10 && mouseX < rect.scaledX + rect.scaledWidth &&
-          mouseY > rect.scaledY + rect.scaledHeight - 10 && mouseY < rect.scaledY + rect.scaledHeight) {
-        rect.isResizing = true;
-      } else if (mouseX >= rect.scaledX && mouseX <= rect.scaledX + rect.scaledWidth &&
-                mouseY >= rect.scaledY && mouseY <= rect.scaledY + rect.scaledHeight) {
-        rect.isDragging = true;
-        rect.dragOffsetX = mouseX - rect.scaledX;
-        rect.dragOffsetY = mouseY - rect.scaledY;
-      }
-    });
+      const mouseX = e.clientX - canvas.getBoundingClientRect().left;
+      const mouseY = e.clientY - canvas.getBoundingClientRect().top;
+      rects.forEach(rect => {
+          if (mouseX > rect.x + rect.width - 10 && mouseX < rect.x + rect.width &&
+              mouseY > rect.y + rect.height - 10 && mouseY < rect.y + rect.height) {
+              rect.isResizing = true;
+          } else if (mouseX >= rect.x && mouseX <= rect.x + rect.width &&
+              mouseY >= rect.y && mouseY <= rect.y + rect.height) {
+              rect.isDragging = true;
+              rect.dragOffsetX = mouseX - rect.x;
+              rect.dragOffsetY = mouseY - rect.y;
+          }
+      });
   });
 
   canvas.addEventListener('mousemove', function(e) {
-    const mouseX = e.clientX - canvas.getBoundingClientRect().left;
-    const mouseY = e.clientY - canvas.getBoundingClientRect().top;
-    rects.forEach(rect => {
-      if (rect.isResizing) {
-        const newWidth = mouseX - rect.scaledX;
-        const newHeight = mouseY - rect.scaledY;
-        if (newWidth > 0 && newHeight > 0 && mouseX <= canvas.width && mouseY <= canvas.height) {
-          rect.scaledWidth = newWidth;
-          rect.scaledHeight = newHeight;
-        }
-      } else if (rect.isDragging) {
-        const newX = mouseX - rect.dragOffsetX;
-        const newY = mouseY - rect.dragOffsetY;
-        if (newX >= 0 && newY >= 0 && newX + rect.scaledWidth <= canvas.width && newY + rect.scaledHeight <= canvas.height) {
-          rect.scaledX = newX;
-          rect.scaledY = newY;
-        }
-      }
-    });
-    draw();
+      const mouseX = e.clientX - canvas.getBoundingClientRect().left;
+      const mouseY = e.clientY - canvas.getBoundingClientRect().top;
+      rects.forEach(rect => {
+          if (rect.isResizing) {
+              const newWidth = mouseX - rect.x;
+              const newHeight = mouseY - rect.y;
+              if (newWidth > 0 && newHeight > 0) {
+                  rect.width = newWidth;
+                  rect.height = newHeight;
+              }
+          } else if (rect.isDragging) {
+              const newX = mouseX - rect.dragOffsetX;
+              const newY = mouseY - rect.dragOffsetY;
+              if (newX >= 0 && newY >= 0 && newX + rect.width <= canvas.width && newY + rect.height <= canvas.height) {
+                  rect.x = newX;
+                  rect.y = newY;
+              }
+          }
+      });
+      draw();
   });
 
   canvas.addEventListener('mouseup', function() {
-    rects.forEach(rect => {
-      if (rect.isDragging || rect.isResizing) {
-        rect.x = rect.scaledX / canvas.width;
-        rect.y = rect.scaledY / canvas.height;
-        rect.width = rect.scaledWidth / canvas.width;
-        rect.height = rect.scaledHeight / canvas.height;
-        rect.isDragging = false;
-        rect.isResizing = false;
-        draw();
-      }
-    });
+      rects.forEach(rect => {
+          rect.isDragging = false;
+          rect.isResizing = false;
+          draw();
+      });
   });
 
   window.addEventListener('resize', setCanvasSize);
@@ -374,84 +545,64 @@ document.addEventListener('DOMContentLoaded', function() {
   const saveBtn = document.querySelector('.btns__save');
 
   saveBtn.addEventListener('click', function() {
-    saveRectCoords();
+      saveRectCoords();
   });
 
   function saveRectCoords() {
-    const saveRects = rects.map((rect, index) => ({
-      id: index + 1,
-      x: rect.scaledX,
-      y: rect.scaledY,
-      width: rect.scaledWidth,
-      height: rect.scaledHeight
-    }));
+      const saveRects = rects.map((rect, index) => ({
+          id: index + 1,
+          x: rect.x,
+          y: rect.y,
+          width: rect.width,
+          height: rect.height
+      }));
 
-    const saveRectsJSON = JSON.stringify(saveRects);
-    console.log(saveRectsJSON)
+      const saveRectsJSON = JSON.stringify(saveRects);
+      console.log(saveRectsJSON)
   }
 
   const addBtn = document.querySelector('.btns__add');
   addBtn.addEventListener('click', addRect);
 
   function addRect() {
-    const newRect = {
-      id: rects.length + 1, // Присваивание уникального ID
-      x: Math.random(), // Примерные начальные координаты
-      y: Math.random(),
-      width: 0.1,
-      height: 0.03,
-      stroke: '#1A1A1A',
-      isDragging: false,
-      isResizing: false
-    };
+      const newRect = {
+          id: rects.length + 1, // Присваивание уникального ID
+          x: Math.floor(Math.random() * canvas.width / 3), // Примерные начальные координаты
+          y: Math.floor(Math.random() * canvas.height / 3),
+          width: 100,
+          height: 30,
+          stroke: '#1A1A1A',
+          isDragging: false,
+          isResizing: false
+      };
   
-    rects.push(newRect);
-    updateRects(); // Обновите положение и размеры всех прямоугольников
-    draw(); // Перерисовка канваса
+      rects.push(newRect);
+      draw(); // Перерисовка канваса
   }
   
-  // Находим кнопку
   const deleteBtn = document.querySelector('.btns__delete');
-
-  // Добавляем обработчик события клика на кнопку
   deleteBtn.addEventListener('click', function() {
-    // Проходим по массиву прямоугольников и ищем выбранный для удаления
-    const indexToRemove = rects.findIndex(rect => rect.selectedForDeletion);
-
-    // Если прямоугольник найден, удаляем его из массива
-    if (indexToRemove !== -1) {
-      rects.splice(indexToRemove, 1);
-      // После удаления обновляем координаты и перерисовываем канвас
-      updateRects();
-      draw();
-    }
-  });
-
-  // Добавляем обработчик события двойного клика на канвас для выбора прямоугольника для удаления
-  canvas.addEventListener('dblclick', function(e) {
-    const mouseX = e.clientX - canvas.getBoundingClientRect().left;
-    const mouseY = e.clientY - canvas.getBoundingClientRect().top;
-    
-    // Проходим по массиву прямоугольников и определяем, был ли клик внутри какого-либо из них
-    rects.forEach(rect => {
-      if (
-        mouseX >= rect.scaledX && mouseX <= rect.scaledX + rect.scaledWidth &&
-        mouseY >= rect.scaledY && mouseY <= rect.scaledY + rect.scaledHeight
-      ) {
-        // Если клик был внутри прямоугольника, помечаем его для удаления
-        rect.selectedForDeletion = true;
+      const indexToRemove = rects.findIndex(rect => rect.selectedForDeletion);
+      if (indexToRemove !== -1) {
+          rects.splice(indexToRemove, 1);
+          draw();
       }
-    });
   });
 
-  document.addEventListener('click', function(event) {
-    // Проверяем, был ли клик вне кнопок и канваса
-    if (!event.target.closest('.btns__delete')) {
-      // Если клик был вне кнопок и канваса, сбрасываем пометки удаления для всех прямоугольников
+  canvas.addEventListener('dblclick', function(e) {
+      const mouseX = e.clientX - canvas.getBoundingClientRect().left;
+      const mouseY = e.clientY - canvas.getBoundingClientRect().top;
+      
       rects.forEach(rect => {
-        rect.selectedForDeletion = false;
+          if (
+              mouseX >= rect.x && mouseX <= rect.x + rect.width &&
+              mouseY >= rect.y && mouseY <= rect.y + rect.height
+          ) {
+              rect.selectedForDeletion = !rect.selectedForDeletion;
+          } else {
+              rect.selectedForDeletion = false;
+          }
       });
-    }
+      draw();
   });
-
 });
