@@ -1,18 +1,13 @@
-<DOCTYPE html
-
+<!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <!-- <script src="konva.min.js" defer></script> -->
     <script src="app.js" defer></script>
     <title>Документы</title>
   </head>
-
   <body>
-
     <header class="header">
       <div class="container header__container">
         <h1 class="header__title">
@@ -20,42 +15,46 @@
         </h1>
         <div class="select">
           <select name="Документы" id="imageSelect" class="select__view">
-  
+
           </select>
         </div>
       </div>
     </header>
-
     <main class="main">
       <section class="docs">
         <div class="container docs__container">
           <div class="docs__col">
-            <div id="docs__content" class="docs__content">
-              <canvas id="canvas" class="canvas"></canvas>
+            <div class="docs__wrap">
+              <div id="docsContent" class="docs__content">
+                <canvas id="canvas" class="canvas" width="100%" height="100%"></canvas>
+              </div>
             </div>
           </div>
           <div class="docs__col">
-            <div class="coords"></div>
-            <div class="btns">
-              <button class="btn btns__save">Сохранить</button>
-              <button class="btn btns__add">Добавить</button>
-              <button class="btn btns__reset">Сбросить</button>
-              <button class="btn btns__delete">Удалить</button>
-            </div>
             <table id="rectsTable" class="rects-table">
               <thead>
-                  <tr>
-                      <th>ID</th>
-                      <th>X</th>
-                      <th>Y</th>
-                      <th>Width</th>
-                      <th>Height</th>
-                  </tr>
+                <tr>
+                  <th>ID</th>
+                  <th>X</th>
+                  <th>Y</th>
+                  <th>Width</th>
+                  <th>Height</th>
+                </tr>
               </thead>
               <tbody>
                   
               </tbody>
-          </table>
+            </table>
+            <div class="btns">
+              <button class="btn btns__save">Сохранить</button>
+              <button class="btn btns__add">Добавить поле</button>
+              <button class="btn btns__delete">Удалить поле</button>
+              <button class="btn btns__reset">Сбросить</button>
+            </div>
+            <form method="post" action="" class="docs__form form">
+              <textarea class="form__textarea"></textarea>
+              <button class="btn__push">Отправить</button>
+            </form>
           </div>
         </div>
       </section>
